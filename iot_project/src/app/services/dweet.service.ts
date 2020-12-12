@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DweetSettingsEnum } from 'src/enum/DweetSettingsEnum';
 import {HttpClient} from '@angular/common/http'
 import Dweet from 'src/models/Dweet';
-import With from 'src/models/with';
+import With from 'src/models/With';
 import Content from 'src/models/Content';
 
 
@@ -32,7 +32,7 @@ export class DweetService {
     return timeParse
   }
 
-  preecherDweet(data: any): Dweet {
+  preencherDweet(data: any): Dweet {
     let dweet: Dweet
     let _withs: Array<With>
     let _date: string
@@ -42,7 +42,7 @@ export class DweetService {
 
     for(let _with of data.with){
       let tempContent: Content
-      tempContent = new Content(_with.content.temperature);
+      tempContent = new Content(_with.content.temperatura);
 
       _date = this.formatDate(_with.created)
       _time = this.formatTime(_with.created)
