@@ -41,14 +41,14 @@ export class DweetService {
     _withs = new Array<With>()
 
     for(let _with of data.with){
-      let tempContent: Content
-      tempContent = new Content(_with.content.temperatura);
+      let content: Content
+      content = new Content(_with.content.temperatura, _with.content.luminosidade);
 
       _date = this.formatDate(_with.created)
       _time = this.formatTime(_with.created)
 
       let tempWith: With
-      tempWith = new With(_with.thing, _with.created, tempContent, _date, _time)
+      tempWith = new With(_with.thing, _with.created, content, _date, _time)
 
       _withs.push(tempWith)
     }
