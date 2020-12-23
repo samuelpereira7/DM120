@@ -29,8 +29,14 @@ export default class Content {
         this.umidMax = $umidMax;
         this.umidMin = $umidMin;
 
-	    this.current_color = $current_color;
-	    this.status_buzzer = $status_buzzer;
+        this.current_color = $current_color;
+        
+        if($status_buzzer == "0") {
+            this.status_buzzer = "OFF";
+        } else
+        {
+            this.status_buzzer = "ON";
+        }
 	}
 
     /**
